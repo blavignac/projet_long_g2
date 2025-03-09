@@ -75,7 +75,7 @@ int main(int argc, char **argv){
     *((int64_t*) result) = (r0*6 + (r1 << base_i))/6;
     int64_t inter = (3*r2 + (r3 << base_i))/6;
     *((int64_t*) (((char*)result) + 6)) = *((int64_t*) (((char*)result) + 6)) + inter;
-    *((int64_t*) (result + 12)) = *((int64_t*) (result + 12) + r4);
+    *((int64_t*) (result + 12)) = *((int64_t*) (result + 12)) + r4;
     
     printf("Product show as two 64 bits groups representing least significant bits(LSB) and most significant bits(MSB), in decimal for clarity, convert to binary and concat to have the value:\n LSB : %llu, MSB: %llu \n", *((uint64_t*)result), *(((uint64_t*)result) + 1));
     
